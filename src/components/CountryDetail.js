@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import styles from './CountryDetail.module.css';
 
 const CountryDetail = () => {
   const { countryCode } = useParams();
   const [country, setCountry] = useState(null);
 
-  useEffect(() => {
-    fetchCountryData();
-  }, []);
-
-  const fetchCountryData = async () => {
+  const fetchCountryData = useCallback(async () => {
     try {
       const response = await fetch(
         `https://restcountries.com/v3.1/alpha/${countryCode}`
@@ -20,17 +16,24 @@ const CountryDetail = () => {
     } catch (error) {
       console.error('Error fetching country details:', error);
     }
-  };
+  }, [countryCode]);
+
+  useEffect(() => {
+    fetchCountryData();
+  }, [fetchCountryData]); // Include fetchCountryData in the dependency array
 
   return (
     <div className={styles.container}>
+      <Link to="/" className={styles.backButton}>
+        &#8592; Back to Home
+      </Link>
       {country ? (
-        <div className={styles['country-detail']}>
+        <div className={styles.countryDetail}>
           {country.flags ? (
             <img
               src={country.flags.png}
               alt={`${country.name?.common || 'Country'} flag`}
-              className={styles['country-flag']}
+              className={styles.countryFlag}
             />
           ) : (
             <p>No flag available</p>

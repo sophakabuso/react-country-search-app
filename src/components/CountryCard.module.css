@@ -1,34 +1,58 @@
-/* CountryCard.module.css */
 
-div {
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #333;
-    margin-bottom: 10px;
-  }
+/* CountryCard.module.css */
+.countryCard {
+  background-color: #090115;
+  color: #03caf1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(250, 13, 13);
+  width: calc(25% - 16px);
+  margin: 8px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
   
-  Link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-  }
+}
+
+.countryInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.countryInfo p {
+  margin: 8px 0;
+}
+
+.countryFlag {
+  width: 200px;
+  height: 60px;
+  margin-right: 0px;
+  border-radius: 4px;
+  object-fit: cover;
   
-  img {
-    width: 100px;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  /* Additional styles to apply when hovering the card */
-  div:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transform: translateY(-2px);
-  }
-  
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.dropdownArrow {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  margin-top: 16px;
+}
+
+.dropdownContent p {
+  margin: 8px 0;
+}

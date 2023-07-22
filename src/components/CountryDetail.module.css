@@ -1,55 +1,39 @@
-/* CountryDetail.module.css */
-
 .container {
-    padding: 20px;
-    background-color: #444;
-    border-radius: 5px;
-  }
-  
-  .country-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .country-flag {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin: 10px 0;
-    color: #fff;
-  }
-  
-  p {
-    font-size: 16px;
-    margin: 5px 0;
-    color: #fff;
-  }
-  
-  p:first-child {
-    margin-top: 0;
-  }
-  
-  /* In case no flag is available, show different styling for the text */
-  p:last-child {
-    color: #999;
-  }
-  
-  /* Loading text style */
-  p:only-child {
-    font-size: 18px;
-    color: #fff;
-  }
-  
-  /* Center the loading text */
-  .container p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-  }
-  
+  background-color: #201848;
+  color: #83caf1;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.backButton {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.countryDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countryFlag {
+  width: 120px;
+  height: 80px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
